@@ -16,7 +16,7 @@ def main():
     name = args.name.split()
     first_name = name[0]
 
-    df = pd.read_csv("Results_{}_{}_Post18-2.csv".format(args.div, args.reg))
+    df = pd.read_csv("Results_{}_{}_Latest.csv".format(args.div, args.reg))
     df = df.drop_duplicates('competitorId', keep='last')
     df = df[df["firstName"].str.contains(first_name)]
     df = df[["competitorName", "overallRank"]]
